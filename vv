@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+</head>
+<body>
+	<h1>registratiion form</h1>
+	<form method="post">
+		
+					<label for="email"><b>Email Address</b></label>
+					<input class="form-control" id="email"  type="email" name="email" required>
+
+					<label for="phonenumber"><b>Phone Number</b></label>
+					<input class="form-control" id="phonenumber"  type="text" name="phonenumber" required>
+
+					<label for="password"><b>Password</b></label>
+					<input class="form-control" id="password"  type="password" name="password" required>
+					<hr class="mb-3">
+					<input class="btn btn-primary" type="submit" id="register" name="create" value="Sign Up">
+	</form>
+
+</body>
+</html>
+<?php
+$conn=mysqli_connect("localhost","root","","demo");
+IF(isset($_POST["submitE"])){
+	$name=$_POST['username'];
+	$email=$_POST['email'];
+	$insert="INSERT INTO user(username,email)values('$name','email')";
+	$x=mysqli query($conn,$insert);
+}
+?>
